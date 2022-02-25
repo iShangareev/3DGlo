@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(o){let s="/src/modules/one.js".split("/").pop();console.log(s)}(),function(o){let s="/src/modules/two.js".split("/").pop();console.log(s)}()})();
