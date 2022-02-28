@@ -16,7 +16,27 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n\n\n\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('1 march 2022');\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n\n\n\n\n\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('1 march 2022');\n(0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n;(0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/menu.js":
+/*!*************************!*\
+  !*** ./modules/menu.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst menu = () => {\n  const menuBtn = document.querySelector('.menu')\n  const menu = document.querySelector('menu')\n  const closeBtn = menu.querySelector('.close-btn')\n  const menuItems = menu.querySelectorAll('ul>li>a')\n\n  const handleMenu = () => {\n    menu.classList.toggle('active-menu')\n  }\n\n  menuBtn.addEventListener('click', handleMenu)\n  closeBtn.addEventListener('click', handleMenu)\n\n  menuItems.forEach(item => item.addEventListener('click', handleMenu)\n  )\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);\n\n\n//# sourceURL=webpack:///./modules/menu.js?");
+
+/***/ }),
+
+/***/ "./modules/modal.js":
+/*!**************************!*\
+  !*** ./modules/modal.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\n  const modal = document.querySelector('.popup')\n  const buttons = document.querySelectorAll('.popup-btn')\n  const closeBtn = modal.querySelector('.popup-close')\n\n  console.log(modal)\n\n  buttons.forEach(btn => {\n    btn.addEventListener('click', () => {\n      modal.style.display = 'block'\n    })\n  })\n\n  closeBtn.addEventListener('click', () => {\n    modal.style.display = 'none'\n  })\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n\n//# sourceURL=webpack:///./modules/modal.js?");
 
 /***/ }),
 
