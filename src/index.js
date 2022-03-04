@@ -3,6 +3,6 @@ import menu from './modules/menu';
 import modal from './modules/modal';
 
 
-timer('1 march 2022');
+timer('5 march 2022');
 menu()
 modal()
