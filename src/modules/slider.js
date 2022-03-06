@@ -61,14 +61,14 @@ const slider = () => {
     }
 
     prevSlide(slides, currentSlide, 'portfolio-item-active')
-    prevSlide(dots, currentSlide, 'dot-active')
+    prevSlide(dot, currentSlide, 'dot-active')
 
     if(e.target.matches('#arrow-right')) {
       currentSlide++
     } else if(e.target.matches('#arrow-left')) {
       currentSlide--
     } else if(e.target.classList.contains('dot')){
-      dots.forEach((dot, index) => {
+      dot.forEach((dot, index) => {
         if(e.target === dot) {
           currentSlide = index
         }
@@ -84,7 +84,7 @@ const slider = () => {
     }
 
     nextSlide(slides, currentSlide, 'portfolio-item-active')
-    nextSlide(dots, currentSlide, 'dot-active')
+    nextSlide(dot, currentSlide, 'dot-active')
   })
 
   sliderBlock.addEventListener('mouseenter', (e) => {
