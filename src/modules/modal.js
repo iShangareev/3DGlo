@@ -2,7 +2,6 @@ const modal = () => {
   const modal = document.querySelector('.popup')
   const modalWindow = document.querySelector('.popup-content')
   const buttons = document.querySelectorAll('.popup-btn')
-  const closeBtn = modal.querySelector('.popup-close')
 
 	let count = 0
 	let idInterval
@@ -63,13 +62,10 @@ const modal = () => {
 		})
   })
 
-  closeBtn.addEventListener('click', () => {
-		if(myMobile.any()) {
-			modal.style.display = 'none'
-		} else {
-			idInterval = requestAnimationFrame(modalClose)
-			modal.style.display = 'none'
-		}
+  modal.addEventListener('click', (e) => {
+    if(!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')){
+      modal.style.display = 'none'
+    }
   })
 
 }
