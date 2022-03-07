@@ -1,10 +1,9 @@
+import { animate } from './helpers'
+
 const modal = () => {
   const modal = document.querySelector('.popup')
   const modalWindow = document.querySelector('.popup-content')
   const buttons = document.querySelectorAll('.popup-btn')
-
-	let count = 0
-	let idInterval
 
 	let myMobile = {
 					Android: function() {
@@ -31,33 +30,21 @@ const modal = () => {
 					}
 			}
 
-  const modalOpen = () => {
-		count++
-    idInterval = requestAnimationFrame(modalOpen)
-    if(count < 15) {
-			modalWindow.style.top = count + '%'
-    } else {
-			cancelAnimationFrame(idInterval)
-		}
-  }
-
-  const modalClose = () => {
-		count--
-    idInterval = requestAnimationFrame(modalClose)
-    if(count > -15) {
-			modalWindow.style.top = count + '%'
-    } else {
-			cancelAnimationFrame(idInterval)
-		}
-  }
-
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
 			if(myMobile.any()) {
 				modal.style.display = 'block'
 			} else {
 				modal.style.display = 'block'
-				idInterval = requestAnimationFrame(modalOpen)
+        animate({
+          duration: 100,
+          timing(timeFraction) {
+            return timeFraction;
+          },
+          draw(progress) {
+            modalWindow.style.top = 15 * progress + '%'
+          }
+        })
 			}
 		})
   })
