@@ -14,7 +14,7 @@ const validator = () => {
     e.target.value = e.target.value.replace(/[^\sа-яА-Я-]+/i, "")
   }))
   textarea.addEventListener('input', (e) => {
-    e.target.value = e.target.value.replace(/[^\sа-яА-Я-]+/i, "")
+    e.target.value = e.target.value.replace(/[^\sа-яА-Я -.,;:!?"()]+/i, "")
   })
 
   emails.forEach(email => email.addEventListener('input', (e) => {
@@ -22,7 +22,7 @@ const validator = () => {
   }))
 
   phones.forEach(phone => phone.addEventListener('input', (e) => {
-    e.target.value = e.target.value.replace(/[^\d()-]+/, "")
+    e.target.value = e.target.value.replace(/[^\d()-+]+/, "")
   }))
 
 }
